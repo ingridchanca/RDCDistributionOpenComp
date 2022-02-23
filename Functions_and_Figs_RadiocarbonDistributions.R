@@ -24,7 +24,9 @@ library(grid) #arranging plots
 library(gridExtra) #arranging plots
 library(cowplot) #arranging plots
 
-## directory
+## directory ????
+base <- file.path("~/RDCDistributionsOpenComp/")
+data <- file.path(base, "data")
 
 ## plot theme used in the manuscript
 theme_set(theme_classic(base_size = 18))
@@ -132,11 +134,11 @@ C14hist <- function(D14C,
 
 #### Tropics -> IntCal20 + Graven et al. (2017), GMD = records for the tropics
 #### + forecast RCP8.5 Graven (2015), PNAS
-C14_Trpcs <- read.table(file = "C14Graven_Tropics_forecast_IntCal20") # use for Porce model
+C14_Trpcs <- read.table(file = file.path(data, "C14Graven_Tropics_forecast_IntCal20")) # use for Porce model
 
 #### Northern Hemisphere -> IntCal20 + Graven et al. (2017), GMD = records for NH
 #### + forecast RCP8.5 Graven (2015), PNAS
-C14_NH <- read.table(file = "C14Graven_PNAS_GMD_Int20_2100_-53050") # use for HFS and Emanuel models
+C14_NH <- read.table(file = file.path(data, "C14Graven_PNAS_GMD_Int20_2100_-53050")) # use for HFS and Emanuel models
 
 
 
